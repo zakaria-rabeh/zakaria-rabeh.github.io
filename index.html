@@ -19,6 +19,18 @@
   img{max-width:100%}
   [hidden]{display:none!important}
 </style>
+<!-- Reglage GoatCounter (a charger avant count.js) : une visite venue d'un CV ou d'une lettre
+     (?ref=cv-chronopost, ?ref=lettre-saft...) a pour source la valeur de ref ; sinon le referrer
+     habituel. La page reste comptee comme « / » : le chemin perd ses parametres. -->
+<script>
+  window.goatcounter = {
+    referrer: function (r) {
+      var m = location.search.match(/[?&]ref=([a-z0-9-]+)/i);
+      return m ? m[1].toLowerCase() : r;
+    },
+    path: function (p) { return p.split('?')[0] || '/'; }
+  };
+</script>
 <!-- Statistiques de visite privees (GoatCounter) : aucun cookie, rien d'affiche sur la page -->
 <script data-goatcounter="https://zakrab.goatcounter.com/count"
         async src="https://gc.zgo.at/count.js"></script>
@@ -308,9 +320,9 @@
         </p>
         <div class="cta">
           <a class="btn accent" href="#pro"><span class="fr">Voir les projets</span><span class="en">See the projects</span></a>
-          <a class="btn primary" href="https://www.linkedin.com/in/zakaria-rabeh-798031150" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn fr" href="Zakaria_Rabeh_CV_FR.pdf" download data-goatcounter-click="cv-fr" data-goatcounter-title="Téléchargement CV FR">Télécharger le CV (PDF)</a>
-          <a class="btn en" href="Zakaria_Rabeh_CV_EN.pdf" download data-goatcounter-click="cv-en" data-goatcounter-title="Download CV EN">Download CV (PDF)</a>
+          <a class="btn primary" href="https://www.linkedin.com/in/zakaria-rabeh-798031150" target="_blank" rel="noopener" data-goatcounter-click="clic-linkedin">LinkedIn</a>
+          <a class="btn fr" href="Zakaria_Rabeh_CV_FR.pdf" download data-goatcounter-click="telechargement-cv-fr" data-goatcounter-title="Téléchargement CV FR">Télécharger le CV (PDF)</a>
+          <a class="btn en" href="Zakaria_Rabeh_CV_EN.pdf" download data-goatcounter-click="telechargement-cv-en" data-goatcounter-title="Download CV EN">Download CV (PDF)</a>
         </div>
         <div class="kpis" aria-label="Chiffres clés">
           <div><b>3 <span class="fr">ans</span><span class="en">yrs</span></b><span><span class="fr">d'IT industriel chez OPmobility — support de 10 usines C-Power dans 7 pays</span><span class="en">of industrial IT at OPmobility — supporting 10 C-Power plants in 7 countries</span></span></div>
@@ -1822,8 +1834,8 @@
         <p><span class="fr">Disponible immédiatement en CDI. Ouvert aux postes IT industriel, MES / OT-IT, données de production, Lean et amélioration continue.</span><span class="en">Available immediately for a permanent position. Open to industrial IT, MES / OT-IT, production-data, Lean and continuous-improvement roles.</span></p>
       </div>
       <div class="c-grid">
-        <a href="mailto:zak-rab@outlook.com"><b>Email</b>zak-rab@outlook.com</a>
-        <a href="https://www.linkedin.com/in/zakaria-rabeh-798031150" target="_blank" rel="noopener"><b>LinkedIn</b>linkedin.com/in/zakaria-rabeh</a>
+        <a href="mailto:zak-rab@outlook.com" data-goatcounter-click="clic-email"><b>Email</b>zak-rab@outlook.com</a>
+        <a href="https://www.linkedin.com/in/zakaria-rabeh-798031150" target="_blank" rel="noopener" data-goatcounter-click="clic-linkedin"><b>LinkedIn</b>linkedin.com/in/zakaria-rabeh</a>
       </div>
     </div>
   </section>
